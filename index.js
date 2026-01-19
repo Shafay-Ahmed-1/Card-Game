@@ -2,14 +2,14 @@ let firstCard = 5;
 let secondCard = 20;
 let sum = firstCard + secondCard;
 
-if (sum < 21) {
-    console.log("Do you want to draw a new card?");
+if (sum < 20) {
+    console.log("Do you want to draw a new card?🙂 ");
 }
 else if (sum === 21) {
-    console.log("wohoo! You've got Blackjack!");
+    console.log("wohoo! You've got Blackjack!🥳 ");
 }
 else {
-    console.log("You're out of the game!");
+    console.log("You're out of the game! 😞 ");
 }
 
 // 1. Create two variables, firstCard and secondCard. 
