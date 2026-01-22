@@ -11,7 +11,6 @@ else if (sum === 21) {
 else {
     console.log("You're out of the game! 😞 ");
 }
-
 // 1. Create two variables, firstCard and secondCard. 
 // Set their values to a random number between 2-11
 
