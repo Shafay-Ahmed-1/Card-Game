@@ -20,7 +20,13 @@ else {
     message = "You're out of the game! 😞 ";
     isAlive = false;
 }
-    cardEl.textContent +=  firstCard + "   " + secondCard;
-    sumEl.textContent += sum; 
+    cardEl.textContent = "cards : " + firstCard + "   " + secondCard  ;
+    sumEl.textContent = "sum : " + sum; 
     resultEl.textContent = message;
+}
+function newcard() {
+    let thirdCard = 1;
+    sum += thirdCard;
+    startgame();
+    
 }
