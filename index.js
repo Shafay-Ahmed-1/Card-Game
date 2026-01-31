@@ -1,16 +1,29 @@
-let firstCard = 11;
-let secondCard = 9;
-let cards =[firstCard,secondCard];
-let sum = firstCard + secondCard;
+let cards =[];
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
 let resultEl = document.getElementById("result-el");
 let sumEl = document.getElementById("sum-el");
 let cardEl = document.getElementById("card-el");
 
 function startGame() {
+    let firstCard = getRandomNumber();
+    let secondCard = getRandomNumber();
+    sum = firstCard + secondCard;
+    cards = [firstCard , secondCard];
+    isAlive = true;
     renderGame();
+}
+function getRandomNumber() {
+    let randomNumber = Math.floor( Math.random()*13) +1;
+    if (randomNumber > 10){
+        return 10;
+    }
+    else if (randomNumber === 1){
+        return 11;
+    }
+    return randomNumber;
 }
 
 function renderGame() {
@@ -35,9 +48,15 @@ for(let i = 0; i < cards.length; i++) {
     resultEl.textContent = message;
 }
 function newCard() {
-    let thirdCard = 1;
-    sum += thirdCard; 
-    cards.push(thirdCard);
-    renderGame();
+    if (isAlive === true && hasBlackJack === false) {
+        let thirdCard = getRandomNumber();
+        sum += thirdCard; 
+        cards.push(thirdCard);
+        renderGame();
+    }
+     else {
+        console.log("you can't draw a new card");
+    }
+    
     
 }
