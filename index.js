@@ -1,3 +1,4 @@
+let player = {name:"Alex", chips:145}
 let cards =[];
 let sum = 0;
 let hasBlackJack = false;
@@ -6,6 +7,9 @@ let message = "";
 let resultEl = document.getElementById("result-el");
 let sumEl = document.getElementById("sum-el");
 let cardEl = document.getElementById("card-el");
+let playerEl = document.getElementById("player-el");
+
+playerEl.textContent =player.name + " : $" + player.chips
 
 function startGame() {
     let firstCard = getRandomNumber();
@@ -54,7 +58,7 @@ function newCard() {
         cards.push(thirdCard);
         renderGame();
     }
-     else {
+     else if (isAlive === false ) { 
         console.log("you can't draw a new card");
     }
     
